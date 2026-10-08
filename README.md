@@ -316,13 +316,17 @@ That keeps one component definition close to the component itself while allowing
 ## Development
 
 ```bash
+npm ci --ignore-scripts
 npm run validate
 npm test
 npm run doctor
-npm run verify
+npm run readme:check
+npm run publication:audit
 ```
 
-No package installation is required for the initial CLI and resolver; they use Node.js built-ins only.
+Initialization and basic resolution require no third-party runtime service. Development validation, packaging, composition, and compilation use separately installed toolchain dependencies. The full `npm run verify` additionally audits all component worktrees and will fail if any pinned checkout contains local modifications.
+
+For maintainers preparing the public GitHub repository, see [the publication checklist](docs/PUBLISHING.md). It covers reproducible checks, remote Git pin verification, authentication requirements, and the explicit distinction between publishing a GitHub repository and publishing an npm package.
 
 ## Status
 

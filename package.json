@@ -23,6 +23,8 @@
     "bench:git-cache": "node scripts/bench-git-cache.mjs",
     "readme:table": "python scripts/sync-toolkit-table.py --write",
     "readme:check": "python scripts/sync-toolkit-table.py --check",
+    "publication:audit": "node scripts/audit-publication.mjs",
+    "publication:audit:remote": "node scripts/audit-publication.mjs --remote",
     "audit:rollout": "node scripts/audit-rollout-import.mjs",
     "doctor": "node bin/essemble.mjs doctor",
     "components:materialize": "node scripts/materialize-components.mjs",

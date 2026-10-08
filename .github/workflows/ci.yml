@@ -36,6 +36,9 @@ jobs:
       - name: Check canonical toolkit table
         run: python scripts/sync-toolkit-table.py --check
 
+      - name: Check submodule provenance and release pins
+        run: npm run publication:audit
+
       - name: Validate catalog and lock contracts
         run: npm run validate
 
