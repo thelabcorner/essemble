@@ -1,0 +1,464 @@
+{
+  "$schema": "./schemas/lock.schema.json",
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30",
+  "components": {
+    "estc": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/estc.git",
+      "branch": "main",
+      "revision": "174a7ea9373238c4860090591d09218319d9557f"
+    },
+    "esabi": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/esabi.git",
+      "branch": "main",
+      "revision": "3d089f705fe186a234c9b02e275d04819f05c17d"
+    },
+    "esb64": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-b64.git",
+      "branch": "master",
+      "revision": "3eb39939b0097a4f0966cceed8bda662c5f6d611",
+      "release": {
+        "version": "1.3.0",
+        "tag": "v1.3.0",
+        "tagCommit": "9334b43a2fcc3ef3f9d5d19cc15dfdb884a36846",
+        "repository": "thelabcorner/es-b64",
+        "manifests": [
+          {
+            "name": "ESB64.manifest.json",
+            "url": "https://github.com/thelabcorner/es-b64/releases/download/v1.3.0/ESB64.manifest.json",
+            "bytes": 43359,
+            "sha256": "93dd5432660d666a425b628cb434d25a0f199ec8400dc2af9a6074d0aaffdfae",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "esb64",
+                "range": "=1.3.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "espack": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/espack.git",
+      "branch": "master",
+      "revision": "a1972b3333f6bb5bcc55ffe7ab929204171ec028"
+    },
+    "esarr": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-arr.git",
+      "branch": "master",
+      "revision": "7a593b95a6b521269902bc8ccd18c762ef6f81f6",
+      "release": {
+        "version": "1.2.0",
+        "tag": "v1.2.0",
+        "tagCommit": "de6e620afc2ea7c2ecc813055eaec941ee3bff63",
+        "repository": "thelabcorner/es-arr",
+        "manifests": [
+          {
+            "name": "ESARR.manifest.json",
+            "url": "https://github.com/thelabcorner/es-arr/releases/download/v1.2.0/ESARR.manifest.json",
+            "bytes": 119675,
+            "sha256": "93612b06642f3c219af2f14692cdaaccaae3874474a24a625a5ad7c3c24e7b4c",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "esarr",
+                "range": "=1.2.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "eschars": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-chars.git",
+      "branch": "main",
+      "revision": "b4c4a8dac32b7a062f43f49c8de8e119bf2d1f76",
+      "release": {
+        "version": "1.2.0",
+        "tag": "v1.2.0",
+        "tagCommit": "7eeee48c3497fb923dbf6ca6778dbc9f0c6f169d",
+        "repository": "thelabcorner/es-chars",
+        "manifests": [
+          {
+            "name": "ESCHARS.manifest.json",
+            "url": "https://github.com/thelabcorner/es-chars/releases/download/v1.2.0/ESCHARS.manifest.json",
+            "bytes": 246951,
+            "sha256": "b55dbe87003aa2f2f233fac3b69b2a6d8a73f7f67a9eb2ddcd55125677a3fda0",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "eschars",
+                "range": "=1.2.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "eson": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/eson.git",
+      "branch": "master",
+      "revision": "e3829565f4652e8b1c016f1396fa4515affb1153",
+      "release": {
+        "version": "1.3.0",
+        "tag": "v1.3.0",
+        "tagCommit": "338ad07907755f9b35b482cf5c5f4a456ea14f5f",
+        "repository": "thelabcorner/eson",
+        "manifests": [
+          {
+            "name": "ESON.manifest.json",
+            "url": "https://github.com/thelabcorner/eson/releases/download/v1.3.0/ESON.manifest.json",
+            "bytes": 249631,
+            "sha256": "0c69d74abca7c8efa454229e0117061d60d574e4ed7c5ac3beaa9d3915298698",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "eson",
+                "range": "=1.3.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "esstr": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-str.git",
+      "branch": "main",
+      "revision": "07ef6fdb368c24eeb02108c3cf01601e9a28e92b",
+      "release": {
+        "version": "1.3.0",
+        "tag": "v1.3.0",
+        "tagCommit": "ed5492e838574a2bf635687c69f8b0930cfc0bdd",
+        "repository": "thelabcorner/es-str",
+        "manifests": [
+          {
+            "name": "ESSTR.manifest.json",
+            "url": "https://github.com/thelabcorner/es-str/releases/download/v1.3.0/ESSTR.manifest.json",
+            "bytes": 269839,
+            "sha256": "fda76b80904ac4a4ec0bb0bbcb363cbd7c161b875ce83510bda2b551427dc30c",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "esstr",
+                "range": "=1.3.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "eshttp": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-http.git",
+      "branch": "main",
+      "revision": "fb62b2df6c2e7bda87c9749738b7d03be3ec2a09",
+      "release": {
+        "version": "1.2.0",
+        "tag": "v1.2.0",
+        "tagCommit": "2a76a033a4232a67e4670ec5fbda322ad355efc2",
+        "repository": "thelabcorner/es-http",
+        "manifests": [
+          {
+            "name": "eshttp.accel-x64.manifest.json",
+            "url": "https://github.com/thelabcorner/es-http/releases/download/v1.2.0/eshttp.accel-x64.manifest.json",
+            "bytes": 635044,
+            "sha256": "5c477b44a7561ac09c6e9c4bc08a75cfaa5ffdb3940f6a91d5d1e466d8336792",
+            "variant": {
+              "arch": "x64"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "eshttp",
+                "range": "=1.2.0"
+              }
+            ]
+          },
+          {
+            "name": "eshttp.accel-x86.manifest.json",
+            "url": "https://github.com/thelabcorner/es-http/releases/download/v1.2.0/eshttp.accel-x86.manifest.json",
+            "bytes": 581124,
+            "sha256": "d5b0b3b42df5811293d0332cf16f136480f785d1a78e1261be582727af8929ff",
+            "variant": {
+              "arch": "x86"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "eshttp",
+                "range": "=1.2.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "esrand": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-rand.git",
+      "branch": "main",
+      "revision": "d205c95e682f41599e2793998af1e29895158c4d",
+      "release": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "tagCommit": "e7f4bc403365ed9b6ed281dff2af1f97cba0fd9f",
+        "repository": "thelabcorner/es-rand",
+        "manifests": [
+          {
+            "name": "ESRAND.manifest.json",
+            "url": "https://github.com/thelabcorner/es-rand/releases/download/v0.2.0/ESRAND.manifest.json",
+            "bytes": 50878,
+            "sha256": "60d857c20ab29129e539395d60961572fdedfdc3d5722e786400790fe41e163c",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "esrand",
+                "range": "=0.2.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "esuuid": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-uuid.git",
+      "branch": "main",
+      "revision": "1d8cbb49f53cf0dd0c8b1e63c82b4bb739f70b1d",
+      "release": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "tagCommit": "cd652eedf02b006c1aafef98a945fa0f5365e2d5",
+        "repository": "thelabcorner/es-uuid",
+        "manifests": [
+          {
+            "name": "ESUUID.manifest.json",
+            "url": "https://github.com/thelabcorner/es-uuid/releases/download/v0.2.0/ESUUID.manifest.json",
+            "bytes": 77143,
+            "sha256": "122837d82e4ab5efc62f6ed0e40c5fb12ccfa288904b0a40edce33cf3ad14615",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "esuuid",
+                "range": "=0.2.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "estimer": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-timer.git",
+      "branch": "main",
+      "revision": "3b233200e05f55e92d27eff0a0b21d0d25dddd54"
+    },
+    "esdb": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/esdb.git",
+      "branch": "main",
+      "revision": "682201f1718a6a26ebd10edf3b37162f6d46526b"
+    },
+    "esmin": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-min.git",
+      "branch": "main",
+      "revision": "53f8b1692f1f57068c5cfdbb7388a2fddd8618ab"
+    },
+    "vector-ipc": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/vector-ipc.git",
+      "branch": "main",
+      "revision": "b37863e8dcb4453a1e20ffe1a27b022d269f9264"
+    },
+    "comtool": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/COMTool.git",
+      "branch": "main",
+      "revision": "24d89f21bb1dece47abe2ea87891cf23d49611c0"
+    },
+    "esobf": {
+      "sourceType": "workspace",
+      "path": "../esobf",
+      "revision": null
+    },
+    "esenv": {
+      "sourceType": "workspace",
+      "path": "../esenv",
+      "revision": null
+    },
+    "espath": {
+      "sourceType": "workspace",
+      "path": "../espath",
+      "revision": null
+    },
+    "esfs": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-fs.git",
+      "branch": "main",
+      "revision": "8310631082ea99d3ea203f5a75f77036b37fbb54",
+      "release": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "tagCommit": "a00dcd9fe894d390ca469f0b7162d248fa423b08",
+        "repository": "thelabcorner/es-fs",
+        "manifests": [
+          {
+            "name": "ESFS.manifest.json",
+            "url": "https://github.com/thelabcorner/es-fs/releases/download/v0.2.0/ESFS.manifest.json",
+            "bytes": 212186,
+            "sha256": "82543617fd0f46430449e77ea0fe8a4715d401b4053d767f67e6c49b4666b048",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "esfs",
+                "range": "=0.2.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "eshash": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-hash.git",
+      "branch": "main",
+      "revision": "9f53d2cd6fb4d9991708f2dd27d693e6293e20b2",
+      "release": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "tagCommit": "92c1beb073e91f32c1bcf98a5ab77eeb3101494c",
+        "repository": "thelabcorner/es-hash",
+        "manifests": [
+          {
+            "name": "ESHASH.manifest.json",
+            "url": "https://github.com/thelabcorner/es-hash/releases/download/v0.2.0/ESHASH.manifest.json",
+            "bytes": 234676,
+            "sha256": "27d5165c82dd30fe4f48eb16903f003384dfacbbce6ae1096f4c36039da44efb",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "eshash",
+                "range": "=0.2.0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "eslog": {
+      "sourceType": "git",
+      "url": "https://github.com/thelabcorner/es-log.git",
+      "branch": "main",
+      "revision": "1cc3fa7fffb1e0e4d281f643564c106b01ebbb38",
+      "release": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "tagCommit": "5e00a1b37011b61f06874819ccf37e8b9be7e5d8",
+        "repository": "thelabcorner/es-log",
+        "manifests": [
+          {
+            "name": "ESLOG.manifest.json",
+            "url": "https://github.com/thelabcorner/es-log/releases/download/v0.2.0/ESLOG.manifest.json",
+            "bytes": 267597,
+            "sha256": "7b78cc4c37c9e9947b0d45c3406db4818e7de38859e013f31f9effaefdfd957c",
+            "variant": {
+              "arch": "any"
+            },
+            "manifestVersion": 2,
+            "composer": {
+              "name": "espack",
+              "version": "0.5.0"
+            },
+            "entries": [
+              {
+                "id": "eslog",
+                "range": "=0.2.0"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

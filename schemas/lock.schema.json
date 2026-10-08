@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:essemble:schema:lock:v2",
+  "title": "ESsemble source and release-artifact lock",
+  "type": "object",
+  "required": ["schemaVersion", "components"],
+  "properties": {
+    "schemaVersion": {"enum": [1, 2]},
+    "generatedAt": {"type": "string"},
+    "components": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["sourceType"],
+        "properties": {
+          "sourceType": {"enum": ["git", "workspace"]},
+          "url": {"type": "string"},
+          "branch": {"type": "string"},
+          "revision": {"type": ["string", "null"]},
+          "path": {"type": "string"},
+          "release": {
+            "type": "object",
+            "required": ["version", "tag", "tagCommit", "repository", "manifests"],
+            "properties": {
+              "version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+              "tag": {"type": "string"},
+              "tagCommit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+              "repository": {"type": "string"},
+              "manifests": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["name", "url", "bytes", "sha256", "variant", "manifestVersion", "composer", "entries"],
+                  "properties": {
+                    "name": {"type": "string"},
+                    "url": {"type": "string"},
+                    "bytes": {"type": "integer", "minimum": 1},
+                    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                    "variant": {
+                      "type": "object",
+                      "required": ["arch"],
+                      "properties": {"arch": {"enum": ["any", "x64", "x86"]}},
+                      "additionalProperties": false
+                    },
+                    "manifestVersion": {"const": 2},
+                    "composer": {
+                      "type": "object",
+                      "required": ["name", "version"],
+                      "properties": {
+                        "name": {"const": "espack"},
+                        "version": {"type": "string"}
+                      },
+                      "additionalProperties": false
+                    },
+                    "entries": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": ["id", "range"],
+                        "properties": {
+                          "id": {"type": "string"},
+                          "range": {"type": "string"}
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

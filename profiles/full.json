@@ -1,0 +1,8 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schemaVersion": 1,
+  "name": "full",
+  "description": "Every stable ESsemble component, including workspace-local sources.",
+  "selection": ["estc", "esabi", "esb64", "espack", "esarr", "eschars", "eson", "esstr", "eshttp", "esrand", "esuuid", "estimer", "esdb", "esmin", "vector-ipc", "comtool", "esenv", "espath", "esfs", "eshash", "eslog"],
+  "scopes": ["runtime", "build", "compose", "native", "optionalRuntime", "integration"]
+}

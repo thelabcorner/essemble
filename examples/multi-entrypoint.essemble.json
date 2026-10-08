@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "schemaVersion": 1,
+  "target": "illustrator-win-x64",
+  "native": "prefer",
+  "entries": {
+    "core": {
+      "use": [
+        "eslog@0.2.0",
+        "esuuid@0.2.0"
+      ],
+      "out": "dist/core.jsx"
+    },
+    "network": {
+      "use": [
+        "eshttp@1.2.0"
+      ],
+      "out": "dist/network.jsx"
+    }
+  }
+}

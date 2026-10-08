@@ -1,0 +1,57 @@
+[submodule "components/estc"]
+	path = components/estc
+	url = https://github.com/thelabcorner/estc.git
+[submodule "components/esabi"]
+	path = components/esabi
+	url = https://github.com/thelabcorner/esabi.git
+[submodule "components/esb64"]
+	path = components/esb64
+	url = https://github.com/thelabcorner/es-b64.git
+[submodule "components/espack"]
+	path = components/espack
+	url = https://github.com/thelabcorner/espack.git
+[submodule "components/esarr"]
+	path = components/esarr
+	url = https://github.com/thelabcorner/es-arr.git
+[submodule "components/eschars"]
+	path = components/eschars
+	url = https://github.com/thelabcorner/es-chars.git
+[submodule "components/eson"]
+	path = components/eson
+	url = https://github.com/thelabcorner/eson.git
+[submodule "components/esstr"]
+	path = components/esstr
+	url = https://github.com/thelabcorner/es-str.git
+[submodule "components/eshttp"]
+	path = components/eshttp
+	url = https://github.com/thelabcorner/es-http.git
+[submodule "components/esrand"]
+	path = components/esrand
+	url = https://github.com/thelabcorner/es-rand.git
+[submodule "components/esuuid"]
+	path = components/esuuid
+	url = https://github.com/thelabcorner/es-uuid.git
+[submodule "components/estimer"]
+	path = components/estimer
+	url = https://github.com/thelabcorner/es-timer.git
+[submodule "components/esdb"]
+	path = components/esdb
+	url = https://github.com/thelabcorner/esdb.git
+[submodule "components/esmin"]
+	path = components/esmin
+	url = https://github.com/thelabcorner/es-min.git
+[submodule "components/vector-ipc"]
+	path = components/vector-ipc
+	url = https://github.com/thelabcorner/vector-ipc.git
+[submodule "components/comtool"]
+	path = components/comtool
+	url = https://github.com/thelabcorner/COMTool.git
+[submodule "components/esfs"]
+	path = components/esfs
+	url = https://github.com/thelabcorner/es-fs.git
+[submodule "components/eshash"]
+	path = components/eshash
+	url = https://github.com/thelabcorner/es-hash.git
+[submodule "components/eslog"]
+	path = components/eslog
+	url = https://github.com/thelabcorner/es-log.git

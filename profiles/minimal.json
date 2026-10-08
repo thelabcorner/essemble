@@ -1,0 +1,8 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schemaVersion": 1,
+  "name": "minimal",
+  "description": "No implicit components. Add only what the consumer requests.",
+  "selection": [],
+  "scopes": ["runtime"]
+}

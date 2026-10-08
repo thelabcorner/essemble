@@ -1,0 +1,759 @@
+{
+  "$schema": "../schemas/catalog.schema.json",
+  "schemaVersion": 1,
+  "provenance": {
+    "source": "../agent-skills/es-ecosystem-rollout/references/dependency-graph.json",
+    "sourceRole": "rollout evidence imported into ESsemble dependency lanes; not used as a flat runtime graph",
+    "importedOn": "2026-09-29"
+  },
+  "dependencyScopes": [
+    "runtime",
+    "build",
+    "compose",
+    "native",
+    "optionalRuntime",
+    "validation",
+    "benchmark",
+    "prototype",
+    "integration"
+  ],
+  "components": [
+    {
+      "id": "estc",
+      "displayName": "ESTC",
+      "aliases": [
+        "extendscript-toolchain"
+      ],
+      "kind": "compiler-toolchain",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/estc.git",
+        "path": "components/estc"
+      },
+      "capabilities": [
+        "typescript-build",
+        "es3-compatibility",
+        "live-parse"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [],
+        "compose": [],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [
+          "eson",
+          "esarr",
+          "esb64",
+          "eschars",
+          "eshttp",
+          "esrand",
+          "esstr",
+          "estimer",
+          "esenv",
+          "espath",
+          "esfs",
+          "eshash",
+          "eslog",
+          "comtool"
+        ],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esabi",
+      "displayName": "ESABI",
+      "aliases": [],
+      "kind": "native-abi",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/esabi.git",
+        "path": "components/esabi"
+      },
+      "capabilities": [
+        "externalobject-abi"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [],
+        "compose": [],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esb64",
+      "displayName": "ESB64",
+      "aliases": [
+        "es-b64"
+      ],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-b64.git",
+        "path": "components/esb64"
+      },
+      "capabilities": [
+        "base64",
+        "utf8"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "espack"
+        ],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [
+          "eschars"
+        ],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "espack",
+      "displayName": "ESPACK",
+      "aliases": [],
+      "kind": "bundle-composer",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/espack.git",
+        "path": "components/espack"
+      },
+      "capabilities": [
+        "native-bundle",
+        "self-extraction",
+        "composition"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [],
+        "compose": [
+          "esb64"
+        ],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [
+          "estc",
+          "esarr",
+          "eson",
+          "esb64"
+        ],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esarr",
+      "displayName": "ESARR",
+      "aliases": [
+        "es-arr"
+      ],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-arr.git",
+        "path": "components/esarr"
+      },
+      "capabilities": [
+        "array-compat"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "esb64",
+          "espack"
+        ],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "eschars",
+      "displayName": "ESCHARS",
+      "aliases": [
+        "es-chars"
+      ],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-chars.git",
+        "path": "components/eschars"
+      },
+      "capabilities": [
+        "native-byte-ops"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "esb64",
+          "espack"
+        ],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [
+          "eson",
+          "esstr",
+          "esarr"
+        ],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "eson",
+      "displayName": "ESON",
+      "aliases": [],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/eson.git",
+        "path": "components/eson"
+      },
+      "capabilities": [
+        "json"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "esb64",
+          "espack"
+        ],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [
+          "eschars",
+          "esstr",
+          "esarr"
+        ],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esstr",
+      "displayName": "ESSTR",
+      "aliases": [
+        "es-str"
+      ],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-str.git",
+        "path": "components/esstr"
+      },
+      "capabilities": [
+        "string-trim"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "esb64",
+          "espack",
+          "eschars"
+        ],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [
+          "esarr"
+        ],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "eshttp",
+      "displayName": "ESHTTP",
+      "aliases": [
+        "es-http"
+      ],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-http.git",
+        "path": "components/eshttp"
+      },
+      "capabilities": [
+        "http"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "esb64",
+          "eson",
+          "espack"
+        ],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esrand",
+      "displayName": "ESRAND",
+      "aliases": [
+        "es-rand"
+      ],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-rand.git",
+        "path": "components/esrand"
+      },
+      "capabilities": [
+        "random",
+        "sampling"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "espack"
+        ],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [
+          "estimer"
+        ],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esuuid",
+      "displayName": "ESUUID",
+      "aliases": [
+        "es-uuid"
+      ],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-uuid.git",
+        "path": "components/esuuid"
+      },
+      "capabilities": [
+        "uuid"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "esrand",
+          "espack"
+        ],
+        "native": [],
+        "optionalRuntime": [
+          "esrand"
+        ],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [
+          "esarr",
+          "eschars",
+          "esstr"
+        ],
+        "integration": []
+      }
+    },
+    {
+      "id": "estimer",
+      "displayName": "ESTIMER",
+      "aliases": [
+        "es-timer"
+      ],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-timer.git",
+        "path": "components/estimer"
+      },
+      "capabilities": [
+        "timing"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esdb",
+      "displayName": "ESDB",
+      "aliases": [],
+      "kind": "native-runtime",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/esdb.git",
+        "path": "components/esdb"
+      },
+      "capabilities": [
+        "storage",
+        "sqlite",
+        "state"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [],
+        "compose": [],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [
+          "estc"
+        ],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esmin",
+      "displayName": "ESMIN",
+      "aliases": [
+        "es-min"
+      ],
+      "kind": "build-tool",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-min.git",
+        "path": "components/esmin"
+      },
+      "capabilities": [
+        "minification"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [],
+        "compose": [],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "vector-ipc",
+      "displayName": "VectorIPC",
+      "aliases": [
+        "vectoripc"
+      ],
+      "kind": "native-ipc-runtime",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/vector-ipc.git",
+        "path": "components/vector-ipc"
+      },
+      "capabilities": [
+        "ipc"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [],
+        "compose": [],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [
+          "eson"
+        ],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "comtool",
+      "displayName": "COMTool",
+      "aliases": [
+        "comtool-v2"
+      ],
+      "kind": "automation-runtime",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/COMTool.git",
+        "path": "components/comtool"
+      },
+      "capabilities": [
+        "com-automation",
+        "extendscript-automation",
+        "debugger-automation"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [],
+        "compose": [],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": [
+          "eson"
+        ]
+      }
+    },
+    {
+      "id": "esobf",
+      "displayName": "ESOBF",
+      "aliases": [],
+      "kind": "build-tool",
+      "status": "preview",
+      "source": {
+        "type": "workspace",
+        "path": "../esobf"
+      },
+      "capabilities": [
+        "obfuscation"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [],
+        "compose": [],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esenv",
+      "displayName": "ESENV",
+      "aliases": [],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "workspace",
+        "path": "../esenv"
+      },
+      "capabilities": [
+        "environment-detection",
+        "capability-detection"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "espath",
+      "displayName": "ESPATH",
+      "aliases": [],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "workspace",
+        "path": "../espath"
+      },
+      "capabilities": [
+        "path-transform",
+        "file-uri-transform"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "esfs",
+      "displayName": "ESFS",
+      "aliases": [],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-fs.git",
+        "path": "components/esfs"
+      },
+      "capabilities": [
+        "filesystem-io"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "esb64",
+          "espack"
+        ],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "eshash",
+      "displayName": "ESHASH",
+      "aliases": [],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-hash.git",
+        "path": "components/eshash"
+      },
+      "capabilities": [
+        "crc32",
+        "sha256"
+      ],
+      "dependencies": {
+        "runtime": [],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "esb64",
+          "espack"
+        ],
+        "native": [
+          "esabi"
+        ],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    },
+    {
+      "id": "eslog",
+      "displayName": "ESLOG",
+      "aliases": [],
+      "kind": "runtime-primitive",
+      "status": "stable",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thelabcorner/es-log.git",
+        "path": "components/eslog"
+      },
+      "capabilities": [
+        "structured-logging"
+      ],
+      "dependencies": {
+        "runtime": [
+          "eson"
+        ],
+        "build": [
+          "estc"
+        ],
+        "compose": [
+          "eson",
+          "espack"
+        ],
+        "native": [],
+        "optionalRuntime": [],
+        "validation": [],
+        "benchmark": [],
+        "prototype": [],
+        "integration": []
+      }
+    }
+  ]
+}

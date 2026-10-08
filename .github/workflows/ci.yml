@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate (${{ matrix.os }}, Node 22)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Checkout framework and independent tool repositories
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install framework-only dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Check canonical toolkit table
+        run: python scripts/sync-toolkit-table.py --check
+
+      - name: Validate catalog and lock contracts
+        run: npm run validate
+
+      - name: Run regression suite
+        run: npm test
+
+      - name: Audit a locked reference component
+        run: node bin/essemble.mjs doctor --use eson --json
+
+      - name: Verify npm package file selection
+        run: npm pack --dry-run --ignore-scripts

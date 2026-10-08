@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:essemble:schema:catalog:v1",
+  "title": "ESsemble component catalog",
+  "type": "object",
+  "required": ["schemaVersion", "dependencyScopes", "components"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "provenance": {"type": "object"},
+    "dependencyScopes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "displayName", "kind", "status", "source", "capabilities", "dependencies"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "displayName": {"type": "string"},
+          "aliases": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "kind": {"type": "string"},
+          "status": {"enum": ["stable", "preview"]},
+          "source": {"type": "object"},
+          "capabilities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "dependencies": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

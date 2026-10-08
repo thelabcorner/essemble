@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:essemble:schema:project:v1",
+  "title": "ESsemble project",
+  "type": "object",
+  "required": ["schemaVersion", "entries"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schemaVersion": {"const": 1},
+    "target": {
+      "oneOf": [
+        {"type": "string"},
+        {
+          "type": "object",
+          "properties": {
+            "host": {"type": "string"},
+            "platform": {"type": "string"},
+            "arch": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "native": {"enum": ["prefer", "portable", "require"]},
+    "plugins": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "toolProviders": {"type": "object", "additionalProperties": {"type": "string"}},
+    "entries": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["use"],
+        "properties": {
+          "use": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "target": {
+            "oneOf": [
+              {"type": "string"},
+              {
+                "type": "object",
+                "properties": {
+                  "host": {"type": "string"},
+                  "platform": {"type": "string"},
+                  "arch": {"type": "string"}
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "native": {"enum": ["prefer", "portable", "require"]},
+          "compiler": {
+            "type": "object",
+            "required": ["config", "out"],
+            "properties": {"config": {"type": "string"}, "out": {"type": "string"}},
+            "additionalProperties": false
+          },
+          "out": {"type": "string"},
+          "manifestOut": {"type": "string"},
+          "receipt": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

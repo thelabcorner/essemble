@@ -1,0 +1,51 @@
+{
+  "name": "essemble",
+  "version": "0.2.0",
+  "private": true,
+  "description": "ESsemble — modular framework and composition layer for the Adobe ExtendScript toolkit.",
+  "type": "module",
+  "bin": {
+    "essemble": "./bin/essemble.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "registry/",
+    "profiles/",
+    "schemas/",
+    "essemble.lock.json",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "validate": "node scripts/validate.mjs",
+    "bench:sources": "node scripts/bench-sources.mjs",
+    "bench:git-cache": "node scripts/bench-git-cache.mjs",
+    "readme:table": "python scripts/sync-toolkit-table.py --write",
+    "readme:check": "python scripts/sync-toolkit-table.py --check",
+    "audit:rollout": "node scripts/audit-rollout-import.mjs",
+    "doctor": "node bin/essemble.mjs doctor",
+    "components:materialize": "node scripts/materialize-components.mjs",
+    "components:materialize:recursive": "node scripts/materialize-components.mjs --recursive",
+    "verify": "npm run validate && npm test && npm run doctor",
+    "verify:engine": "node scripts/verify-engine.mjs",
+    "ci:static": "npm run verify",
+    "ci:local": "npm run ci:static && npm run verify:engine"
+  },
+  "dependencies": {
+    "acorn": "8.15.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "extendscript",
+    "adobe",
+    "illustrator",
+    "es3",
+    "framework",
+    "toolchain",
+    "composer",
+    "modular"
+  ]
+}
