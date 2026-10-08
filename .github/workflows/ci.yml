@@ -36,6 +36,9 @@ jobs:
       - name: Check canonical toolkit table
         run: python scripts/sync-toolkit-table.py --check
 
+      - name: Test ecosystem README synchronization safety
+        run: python -m unittest discover -s tests -p test_readme_sync.py
+
       - name: Check submodule provenance and release pins
         run: npm run publication:audit
 

@@ -31,6 +31,40 @@ this repository's canonical toolkit table. The opt-in
 drift in nested README files without changing them. Never use
 `--write --include-components` merely to make ESsemble's CI green.
 
+### Synchronizing the independent ES* GitHub READMEs
+
+The historical `/scripts/sync_toolkit_readmes.py` wrapper targets
+`agent-skills/readme-spec/scripts/sync-toolkit-table.py`, which may be absent
+in a slimmed-down workspace. The repository-local canonical table lives in
+`scripts/sync-toolkit-table.py`, and the remote synchronizer uses that same
+single-source definition:
+
+```bash
+# Read-only audit across all linked ES* repositories, including ESsemble.
+python scripts/sync-es-repo-readmes.py --check
+
+# Optional focused preview of exact proposed README changes.
+python scripts/sync-es-repo-readmes.py --check --repos eson,essemble --diff
+
+# Explicit, authenticated publication across all 22 linked repositories.
+python scripts/sync-es-repo-readmes.py --publish
+
+# Verify remote README content again after publication.
+python scripts/sync-es-repo-readmes.py --check
+```
+
+The synchronizer requires an authenticated `gh` CLI with repository write
+permissions. It operates on the current default-branch README of each
+independent repository using the GitHub Contents API, a current content SHA
+lease, and post-write content verification. It **never modifies local sibling
+working trees**, stages their unrelated edits, force pushes, or rewrites the
+independently versioned submodules. It writes only the canonical toolkit table
+section and preserves other README text and newline conventions. This is a
+cross-repository documentation operation: inspect the target list and diff
+before passing `--publish`. A failed repository reports an error, does not
+roll back previously verified changes to other repositories, and can be
+retried idempotently. ESOBF remains excluded until it is publicly published.
+
 ## GitHub publication
 
 Publish the parent repository to `thelabcorner/essemble`. The local `origin`

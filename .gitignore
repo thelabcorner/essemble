@@ -4,3 +4,5 @@ coverage/
 .artifacts/
 .essemble/
 *.log
+__pycache__/
+*.py[cod]
